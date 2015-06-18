@@ -1,0 +1,26 @@
+blockdiag {
+    // set default colors
+    default_node_color = white;
+    default_group_color = "#7777FF";
+    default_linecolor = black;
+    default_textcolor = black;
+
+    get_structure [label = "計算構造の取得(PDB等)"]
+    add_hydrogen [label = "水素付加", color = "#7777FF"]
+    relax_structure [label = "構造緩和", color = "#7777FF"]
+    initial_guess [label = "初期値作成", color = "#FF7777"]
+    calc_QM_for_QCLO [label = "電子状態計算", color = "#77FF77"]
+    calc_QM [label = "電子状態計算", color = "#77FF77"]
+    grad [label = "力計算・エネルギー微分", color = "#77FF77"]
+    anal_QM [label = "分子軌道・電子密度・静電ポテンシャル", color = "#77FF77"]
+    update_geom [label = "座標更新"]
+
+    get_structure -> add_hydrogen -> relax_structure
+    relax_structure -> initial_guess [folded]
+    initial_guess -> calc_QM [folded]
+    initial_guess <-> calc_QM_for_QCLO
+    calc_QM -> anal_QM
+    grad -> update_geom
+    update_geom -> initial_guess [folded]
+    calc_QM -> grad
+}

@@ -1,0 +1,96 @@
+blockdiag {
+    // set default colors
+    default_node_color = lightblue;
+    default_group_color = "#7777FF";
+    default_linecolor = blue;
+    default_textcolor = black;
+
+    // group
+    group group_step1 {
+         group fram11 {
+            S11_QM [label = "QM"]
+            S11_LO [label = "LO"]
+            S11_pickup [label = "pick up"]
+            S11_QCLO [label = "QCLO"]
+            S11_QM -> S11_LO -> S11_pickup -> S11_QCLO
+
+            shape = "line"
+            color = "#CCCCCC"
+        }
+        
+        group fram12 {
+            S12_QM [label = "QM"]
+            S12_LO [label = "LO"]
+            S12_pickup [label = "pick up"]
+            S12_QCLO [label = "QCLO"]
+            S12_QM -> S12_LO -> S12_pickup -> S12_QCLO
+
+            shape = "line"
+            color = "#CCCCCC"
+        }
+
+        group fram13 {
+            S13_QM [label = "QM"]
+            S13_LO [label = "LO"]
+            S13_pickup [label = "pick up"]
+            S13_QCLO [label = "QCLO"]
+            S13_QM -> S13_LO -> S13_pickup -> S13_QCLO
+
+            shape = "line"
+            color = "#CCCCCC"
+        }
+        
+        // orientation = portrait
+
+        label = "step1"
+        shape = "line"
+        color = "#CCCCCC"
+    }
+
+    group group_step2 {
+        group fram21 {
+            S21_QM [label = "QM"]
+            S21_LO [label = "LO"]
+            S21_pickup [label = "pick up"]
+            S21_QCLO [label = "QCLO"]
+            S21_QM -> S21_LO -> S21_pickup -> S21_QCLO
+
+            shape = "line"
+            color = "#CCCCCC"
+        }
+        
+        group fram22 {
+            S22_QM [label = "QM"]
+            S22_LO [label = "LO"]
+            S22_pickup [label = "pick up"]
+            S22_QCLO [label = "QCLO"]
+            S22_QM -> S22_LO -> S22_pickup -> S22_QCLO
+
+            shape = "line"
+            color = "#CCCCCC"
+        }
+
+        group fram23 {
+            S23_QM [label = "QM"]
+            S23_LO [label = "LO"]
+            S23_pickup [label = "pick up"]
+            S23_QCLO [label = "QCLO"]
+            S23_QM -> S23_LO -> S23_pickup -> S23_QCLO
+
+            shape = "line"
+            color = "#CCCCCC"
+        }
+        
+        // orientation = portrait
+
+        label = "step2"
+        shape = "line"
+        color = "#CCCCCC"
+    }
+
+    //
+    S11_QCLO -> S21_QM
+    S12_QCLO -> S21_QM
+    S13_QCLO -> S21_QM
+}
+
